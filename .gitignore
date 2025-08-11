@@ -1,0 +1,60 @@
+# ---- Go build artifacts ----
+/vscode-helper
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+/dist/
+/bin/
+/coverage.out
+
+# ---- Go modules cache (do not commit) ----
+# (Leave go.sum; it's needed. Just ignore local replace caches.)
+**/vendor/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+.env
+.env.*
+
+# Tooling caches
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.cache/
+
+# ---- Editors / IDE ----
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- Node (if any future UI tooling) ----
+node_modules/
+
+# ---- MCP client config (user-specific) ----
+# Keep out of repo; users maintain their own local config.
+# (Shown in README as example)
+# mcp.json
+
+# ---- Generated data ----
+*.tmp
+/tmp/
