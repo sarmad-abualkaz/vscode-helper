@@ -182,7 +182,13 @@ func main() {
 
 	srv := &http.Server{Addr: *addr, Handler: mux}
 	go func() {
-		log.Printf("MCP streamable HTTP server listening at http://%s%s\n", strings.TrimPrefix(*addr, ":"), p)
+		var host string
+		if strings.HasPrefix(*addr, ":") {
+			host = "localhost" + *addr
+		} else {
+			host = *addr
+		}
+		log.Printf("MCP streamable HTTP server listening at http://%s%s\n", host, p)
 		if err := srv.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("HTTP server error: %v", err)
 		}

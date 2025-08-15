@@ -36,7 +36,11 @@ A dual-purpose toolkit providing:
 ├── main.go                     # CLI entrypoint for vscode-helper
 ├── mcp-server/
 │   ├── python3/mcp_server.py   # Python HTTP MCP server (streamable)
-│   └── golang/mcp_server.go    # Alternate Go server (if used)
+│   └── mcp-server/golang/mcp_server.go   # Go MCP server (stdio or HTTP)
+├── main.go                     # CLI entrypoint for vscode-helper
+├── mcp-server/
+│   ├── python3/mcp_server.py   # Python HTTP MCP server (streamable)
+│   └── golang/mcp_server.go    # Go MCP server (stdio or HTTP)
 ├── requirements.txt            # Python dependencies for MCP server
 ├── go.mod / go.sum             # Go module definitions
 └── Dockerfile                  # Container build for MCP server + CLI
@@ -76,7 +80,7 @@ Registered tools: search_files, open_file
 Build and run:
 
 ```bash
-go build -o mcp-go-server ./cmd/mcp-go-server
+go build -o mcp-go-server mcp-server/golang/mcp_server.go
 
 # stdio transport (default)
 ./mcp-go-server
@@ -112,7 +116,7 @@ stdio (Go server):
   "servers": {
     "vscode-file-finder": {
       "type": "stdio",
-      "command": "/absolute/path/to/mcp-go-server",
+      "command": "/absolute/path/to/mcp_server",
       "args": [],
       "timeout": 30000
     }
