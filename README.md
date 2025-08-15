@@ -37,7 +37,6 @@ A dual-purpose toolkit providing:
 ├── mcp-server/
 │   ├── python3/mcp_server.py   # Python HTTP MCP server (streamable)
 │   └── mcp-server/golang/mcp_server.go   # Go MCP server (stdio or HTTP)
-├── main.go                     # CLI entrypoint for vscode-helper
 ├── mcp-server/
 │   ├── python3/mcp_server.py   # Python HTTP MCP server (streamable)
 │   └── golang/mcp_server.go    # Go MCP server (stdio or HTTP)
